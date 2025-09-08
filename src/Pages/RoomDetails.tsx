@@ -115,6 +115,10 @@ export default function RoomDetails() {
     SetopenDailog(false);
   };
   const handleBooking = async () => {
+    if (!token) {
+      toast.error("you must login");
+      return;
+    }
     const bookingData: Bookingdata = {
       startDate: range[0].startDate?.toISOString() ?? "",
       endDate: range[0].endDate?.toISOString() ?? "",
