@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import imagereview from "../../assets/image 3.png";
+import imagerrate from "../../assets/Group 1.png";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -8,18 +9,18 @@ import { Box, Typography } from "@mui/material";
 const family = [
   {
     name: "Happy Family",
-    rate: "/src/assets/Group 1.png",
+    rate: imagerrate,
     review:
       "What a great trip with my family and I should try again next time soon ...",
-    image: "/src/assets/image 3.png",
+    image: imagereview,
     job: "Angga, Product Designer",
   },
   {
     name: "Happy Family",
-    rate: "/src/assets/Group 1.png",
+    rate: imagerrate,
     review:
       "What a great trip with my family and I should try again next time soon ...",
-    image: "/src/assets/image 3.png",
+    image: imagereview,
     job: "Angga, Product Designer",
   },
 ];

@@ -21,35 +21,46 @@ import Calender from "../ui/Calender";
 import DialogComponent from "../ui/Dailog";
 import Rating from "@mui/material/Rating";
 import { toast } from "react-toastify";
-
+import bedroom1img from "../../src/assets/ic_bedroom (1).png";
+import bedroomimg from "../../src/assets/ic_bedroom.png";
+import ic_acimg from "../../src/assets/ic_ac 1.png";
+import diningroom from "../../src/assets/ic_diningroom 1.png";
+import ic_kulkas from "../../src/assets/ic_kulkas.png";
+import livingroom from "../../src/assets/ic_livingroom.png";
+import tvgroom from "../../src/assets/ic_tv.png";
+import ic_wifi from "../../src/assets/ic_wifi 1.png";
 const facilityroom = [
   {
-    img: "/src/assets/ic_ac 1.png",
+    img: ic_acimg,
     name: "7 unit ready",
   },
   {
-    img: "/src/assets/ic_bedroom (1).png",
+    img: bedroom1img,
     name: "bedroom",
   },
   {
-    img: "/src/assets/ic_diningroom 1.png",
+    img: diningroom,
     name: "1 dining room",
   },
   {
-    img: "/src/assets/ic_kulkas.png",
+    img: ic_kulkas,
     name: "2 refigrator",
   },
   {
-    img: "/src/assets/ic_livingroom.png",
+    img: livingroom,
     name: "1 living room",
   },
   {
-    img: "/src/assets/ic_tv.png",
+    img: tvgroom,
     name: "4 television",
   },
   {
-    img: "/src/assets/ic_wifi 1.png",
+    img: ic_wifi,
     name: "wifi",
+  },
+  {
+    img: bedroomimg,
+    name: "bedroom",
   },
 ];
 interface rateData {

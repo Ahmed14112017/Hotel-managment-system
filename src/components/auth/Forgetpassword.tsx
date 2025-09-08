@@ -12,6 +12,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserUrlBase } from "../../Endpoint";
 import { toast } from "react-toastify";
+import forgetpassword from "../../assets/forgetpassword.png";
 
 export default function Forgetpassword() {
   const navigate = useNavigate();
@@ -115,7 +116,7 @@ export default function Forgetpassword() {
           sx={{
             display: { xs: "none", md: "block" },
 
-            backgroundImage: `url("src/assets/forgetpassword.png")`,
+            backgroundImage: `url("${forgetpassword}")`,
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",

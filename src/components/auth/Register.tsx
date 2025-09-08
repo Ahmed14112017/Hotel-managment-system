@@ -14,6 +14,7 @@ import {
   type SelectChangeEvent,
 } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import loginimage from "../../assets/register.png";
 
 import { useState } from "react";
 import {
@@ -353,7 +354,7 @@ export default function Register() {
               width: "100%",
               height: "100vh",
               borderRadius: "20px",
-              backgroundImage: `url("/src/assets/register.png")`,
+              backgroundImage: `url(${loginimage})`,
               backgroundPosition: "center",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",

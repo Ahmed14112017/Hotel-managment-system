@@ -14,6 +14,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Resetvalidate } from "../../validation/Validation";
+import forgetpassword from "../../assets/forgetpassword.png";
 interface Iresetpassword {
   email: string;
   seed: string;
@@ -191,7 +192,7 @@ export default function RestPassword() {
           sx={{
             display: { xs: "none", md: "block" },
 
-            backgroundImage: `url("src/assets/forgetpassword.png")`,
+            backgroundImage: `url(${forgetpassword}")`,
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",

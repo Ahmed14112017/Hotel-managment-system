@@ -1,12 +1,10 @@
 import { Box, Grid, Typography } from "@mui/material";
-
+import img1 from "../../assets/pic (1).png";
+import img2 from "../../assets/pic (2).png";
+import img from "../../assets/pic.png";
+import Rectangle from "../../assets/Rectangle 3.png";
 export default function Homeyard() {
-  const ImagArray = [
-    "/src/assets/pic (1).png",
-    "/src/assets/pic (2).png",
-    "/src/assets/pic.png",
-    "/src/assets/Rectangle 3.png",
-  ];
+  const ImagArray = [img1, img2, img, Rectangle];
   const NameHouses = ["Tabby Town", "Anggana", "Seattle Rain", "Wodden Pit"];
   const locatioofHouses = [
     "Gunung Batu, Indonesia",

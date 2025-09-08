@@ -18,6 +18,7 @@ import { Link, useNavigate } from "react-router-dom";
 import type { Ilogin } from "../../interfaces";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchuserdata, getuserselector } from "../../slices/Userslice";
+import loginimage from "../../assets/login-img.png";
 // import axios, { type AxiosResponse } from "axios";
 // import { UserUrlBase } from "../../Endpoint";
 import type { AppDispatch } from "../../Store";
@@ -114,7 +115,7 @@ export default function Login() {
         >
           <Typography component={"h3"} sx={{ fontSize: "30px" }}>
             <Link to={"/"} style={{ textDecoration: "none" }}>
-              <span style={{ color: "#3252df" }}></span>Stay
+              <span style={{ color: "#3252df" }}>Stay</span>
             </Link>
             cation.
           </Typography>
@@ -247,7 +248,7 @@ export default function Login() {
               height: "100vh",
               borderRadius: "20px",
               overflow: "hidden",
-              backgroundImage: `url("src/assets/login-img.png")`,
+              backgroundImage: `url(${loginimage})`,
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
