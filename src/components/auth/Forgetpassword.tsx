@@ -34,7 +34,7 @@ export default function Forgetpassword() {
       console.log(res.data);
       toast(res.data.message);
       setloading(false);
-      navigate("/reset-password");
+      navigate("/auth/reset-password");
     } catch (err) {
       const error = err as AxiosError<{ message: string }>;
       toast(error.message);
