@@ -4,6 +4,7 @@ import { useState } from "react";
 import { addDays } from "date-fns";
 import { useNavigate } from "react-router-dom";
 import Capacity from "../../ui/Capacity";
+import banner from "../../../src/assets/banner.png";
 
 export default function Home() {
   const [range, setRange] = useState<DateRangeState[]>([
@@ -85,7 +86,7 @@ export default function Home() {
             width={{ md: "50%" }}
             sx={{ display: { xs: "none", md: "block" } }}
           >
-            <img src="\src\assets\banner.png" width={"100%"} />
+            <img src={`${banner}`} width={"100%"} />
           </Box>
         </Box>
       </Stack>
