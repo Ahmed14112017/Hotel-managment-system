@@ -132,14 +132,13 @@ export default function Listbooks() {
   const [openDailog, setopenDailog] = React.useState<boolean>(false);
   const [typeDailog, settypeDailog] = React.useState<string>("");
   const [IsisLoading, SetIsisLoading] = React.useState(false);
-  const [IsisLoadingDelete, SetIsisLoadingDelete] = React.useState(false);
-  const [IsisLoadingview, SetIsisLoadingview] = React.useState(false);
+  const [IsisLoadingDelete] = React.useState(false);
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - listbook.length) : 0;
   const open = Boolean(anchor);
   const handleChangePage = (
-    event: React.MouseEvent<HTMLButtonElement> | null,
+    _event: React.MouseEvent<HTMLButtonElement> | null,
     newPage: number
   ) => {
     setPage(newPage);
@@ -184,7 +183,7 @@ export default function Listbooks() {
       `https://upskilling-egypt.com:3000/api/v0/admin/booking/${id}`,
       { headers: { Authorization: `Bearer ${token}` } }
     );
-    console.log(res)
+    console.log(res);
     getAllListbook();
   };
   React.useEffect(() => {
