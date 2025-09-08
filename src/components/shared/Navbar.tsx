@@ -97,12 +97,22 @@ export default function Navbar() {
                       <Typography
                         component={Link}
                         to={`/${page}`}
-                        sx={{ textAlign: "center" }}
+                        sx={{ textAlign: "center", textDecoration: "none" }}
                       >
                         {page}
                       </Typography>
                     </MenuItem>
                   ))}
+                  {decodedtoken && (
+                    <Button
+                      onClick={() => {
+                        localStorage.removeItem("token");
+                        navigate("/");
+                      }}
+                    >
+                      logout
+                    </Button>
+                  )}
                 </Menu>
                 {decodedtoken === null && (
                   <Box sx={{ display: "flex", alignItems: "center" }}>

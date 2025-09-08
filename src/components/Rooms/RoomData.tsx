@@ -15,6 +15,7 @@ import {
   type SelectChangeEvent,
 } from "@mui/material";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import { toast } from "react-toastify";
 
 import { useEffect, useState } from "react";
 import type { Addroom, UpdateRoom } from "../../interfaces";
@@ -112,7 +113,7 @@ export default function RoomData() {
     formdata.append("discount", data.discount ?? "");
     if (data.facilities) {
       data.facilities.forEach((f) => {
-        formdata.append("facilities[]", f._id??"");
+        formdata.append("facilities[]", f._id ?? "");
       });
     }
     if (newImages.length > 0) {
@@ -182,27 +183,26 @@ export default function RoomData() {
       };
     });
   };
+
   const handelsubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (Formdata) {
-      try {
-        if (location.state?.type === "edit" && Formdata) {
-          const Updateselectroom = appendformdata(Formdata);
-          await Updateitem({
-            id: roomId,
-            updateProduct: Updateselectroom,
-          }).unwrap();
-        } else {
-          const CreateNewRoom = appendformdata(Formdata);
-          await CreateRoom({
-            Addroom: CreateNewRoom,
-          }).unwrap();
-        }
-
-        navigate("/masterlayout/rooms");
-      } catch (error) {
-        console.error("Update failed:", error);
+    try {
+      if (location.state?.type === "edit") {
+        const Updateselectroom = appendformdata(Formdata);
+        await Updateitem({
+          id: roomId,
+          updateProduct: Updateselectroom,
+        }).unwrap();
+        toast.success("Room updated successfully!");
+      } else {
+        const CreateNewRoom = appendformdata(Formdata);
+        await CreateRoom({ Addroom: CreateNewRoom }).unwrap();
+        toast.success("Room created successfully!");
       }
+      navigate("/admin/rooms");
+    } catch (err: any) {
+      toast.error(err?.data?.message || "Something went wrong!");
+      console.error("Error:", err);
     }
   };
   useEffect(() => {
